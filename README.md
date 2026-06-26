@@ -10,10 +10,9 @@ It doesn't just beep once. It plays a short jingle and then **nags every minute 
 
 When Claude Code stops (finishes responding), a small alert window pops up and:
 
-1. Plays a bright "ta-da, done!" jingle.
-2. Waits up to 60 seconds for **any key press** in that window.
-   - Press a key → the alert stops and the window closes.
-   - No key within 60s → it plays again, and keeps repeating until you acknowledge it.
+1. Plays a soft chime.
+2. Pauses briefly, then plays again — **looping like an alarm** until you press **any key** in that window.
+   - Press a key → the alarm stops and the window closes immediately.
 
 A single-instance guard means you never get a pile of stacked alert windows.
 
@@ -59,7 +58,7 @@ Edit the top of `done-alert.ps1`:
 
 | Variable | What it does |
 |----------|--------------|
-| `$WaitSeconds` | How long to wait before nagging again (default `60`). |
+| `$GapMs` | Pause between alarm repeats, in milliseconds (default `1200`). Smaller = more frantic. |
 | `$Notes` | The melody. Each note is `@(frequencyHz, durationMs)`. Higher Hz = higher pitch. |
 
 Note frequency cheat-sheet: `C5=523 D5=587 E5=659 F5=698 G5=784 A5=880 B5=988 C6=1047 D6=1175`.
