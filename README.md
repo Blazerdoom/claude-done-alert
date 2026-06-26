@@ -65,6 +65,18 @@ Everything lives in one clearly-marked **EASY SETTINGS** block at the top of `do
 
 Notes are written as `<letter><octave>`, e.g. `C5`, `F#4`, `Bb5` (octaves 3–6). No frequency math required.
 
+### Use your own sound (e.g. a phone alarm tone)
+
+Want a real recording instead of beeps? Save any `.wav` or `.mp3` somewhere stable and point `$SoundFile` at it:
+
+```powershell
+$SoundFile = 'C:\Users\you\.claude\hooks\my-alarm.mp3'
+```
+
+The clip plays in full, then repeats after `$GapMs` until you press a key. Tip: keep the file in your `~/.claude/hooks/` folder so the path doesn't break if you clean out Downloads.
+
+> Respect copyright — only use audio you have the right to use, and don't commit copyrighted clips to a public repo.
+
 ## Why a hook and not a "skill"?
 
 Skills only run when explicitly invoked — they can't react to an event on their own. A **Stop hook** is the part of Claude Code that fires automatically every time Claude finishes. That's the only mechanism that reliably catches "Claude is done."
