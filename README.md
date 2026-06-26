@@ -54,16 +54,16 @@ A single-instance guard means you never get a pile of stacked alert windows.
 
 ## Customize
 
-Edit the top of `done-alert.ps1`:
+Everything lives in one clearly-marked **EASY SETTINGS** block at the top of `done-alert.ps1` — no need to touch anything else.
 
-| Variable | What it does |
-|----------|--------------|
+| Setting | What it does |
+|---------|--------------|
+| `$Preset` | Pick a ready-made sound by name: `laundry` (the Samsung washer "done" tune), `gentle`, `alarm`, `chime`, `doorbell`, `fanfare`, `arcade`, `siren`. |
+| `$CustomTune` | Write your own tune with plain **note names** — e.g. `'C5 E5 G5 C6'`. Add `:ms` for length (`'E5:150 G5:400'`), use `r` for a rest. Leave `''` to use the preset. |
+| `$SoundFile` | Play your own sound **file** instead — supports `.wav` **and** `.mp3`. e.g. `'C:\Users\you\Music\laundry.mp3'`. Leave `''` to use notes. |
 | `$GapMs` | Pause between alarm repeats, in milliseconds (default `1200`). Smaller = more frantic. |
-| `$Notes` | The melody. Each note is `@(frequencyHz, durationMs)`. Higher Hz = higher pitch. |
 
-Note frequency cheat-sheet: `C5=523 D5=587 E5=659 F5=698 G5=784 A5=880 B5=988 C6=1047 D6=1175`.
-
-Want a different tune? Just rewrite the `$Notes` list.
+Notes are written as `<letter><octave>`, e.g. `C5`, `F#4`, `Bb5` (octaves 3–6). No frequency math required.
 
 ## Why a hook and not a "skill"?
 
