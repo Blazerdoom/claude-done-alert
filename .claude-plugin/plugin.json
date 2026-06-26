@@ -1,0 +1,10 @@
+{
+  "name": "claude-done-alert",
+  "version": "1.0.0",
+  "description": "Plays a repeating sound alert when Claude Code finishes a task, so you never forget to come back. Nags until you press a key.",
+  "author": {
+    "name": "Blazerdoom"
+  },
+  "keywords": ["hook", "notification", "sound", "alert", "stop-hook", "productivity"],
+  "license": "MIT"
+}

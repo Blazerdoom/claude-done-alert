@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -Command \"Start-Process powershell -ArgumentList '-NoProfile','-ExecutionPolicy','Bypass','-File','${CLAUDE_PLUGIN_ROOT}\\hooks\\done-alert.ps1'\"",
+            "timeout": 15,
+            "statusMessage": "Launching done alert",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}

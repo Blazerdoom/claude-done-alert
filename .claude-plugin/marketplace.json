@@ -1,0 +1,13 @@
+{
+  "name": "claude-done-alert",
+  "owner": {
+    "name": "Blazerdoom"
+  },
+  "plugins": [
+    {
+      "name": "claude-done-alert",
+      "source": "./",
+      "description": "Plays a repeating sound alert when Claude Code finishes a task. Nags until you press a key."
+    }
+  ]
+}
